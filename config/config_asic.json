@@ -1,0 +1,29 @@
+{
+    "DESIGN_NAME": "riscv_core_asic",
+
+    "VERILOG_FILES": [
+        "dir::../rtl/alu.s",
+        "dir::../rtl/register_file.s",
+        "dir::../rtl/program_counter.s",
+        "dir::../rtl/immediate_generator.s",
+        "dir::../rtl/instruction_decoder.s",
+        "dir::../rtl/control_unit.s",
+        "dir::../rtl/branch_unit.s",
+        "dir::../rtl/forwarding_unit.s",
+        "dir::../rtl/hazard_detection.s",
+        "dir::../rtl/if_id_reg.s",
+        "dir::../rtl/id_ex_reg.s",
+        "dir::../rtl/ex_mem_reg.s",
+        "dir::../rtl/mem_wb_reg.s",
+        "dir::../rtl/riscv_core_asic.s"
+    ],
+
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 10.0,
+
+    "PNR_SDC_FILE": "dir::../constraints.sdc",
+    "SIGNOFF_SDC_FILE": "dir::../constraints.sdc",
+
+    "FP_CORE_UTIL": 40,
+    "PL_TARGET_DENSITY": 0.50
+}

@@ -1,0 +1,20 @@
+GDSReady-RV — ASIC Synthesis Summary
+====================================
+
+Run:
+RISCV_ASIC_SYNTH_02
+
+Design:
+riscv_core_asic
+
+Flow:
+LibreLane / Yosys synthesis
+
+Purpose:
+Synthesis baseline for the ASIC-facing RISC-V processor.
+
+Detailed metrics:
+See metrics.csv
+
+Synthesized netlist:
+riscv_core_asic.nl.v

@@ -1,0 +1,52 @@
+WARNING: rtl/instruction_memory.s:17: $readmemh(tb/programs/program.hex): Not enough words in the file for the requested range [0:255].
+VCD info: dumpfile riscv_regression.vcd opened for output.
+WARNING: tb/regression_tb.s:84: $readmemh(tb/regression/alu.hex): Not enough words in the file for the requested range [0:255].
+
+==============================================
+TEST 1: ALU + FORWARDING
+==============================================
+x1 = 00000005
+x2 = 0000000a
+x3 = 0000000f
+x4 = fffffffb
+x5 = 0000000a
+PASS: ALU + FORWARDING
+WARNING: tb/regression_tb.s:123: $readmemh(tb/regression/load_store.hex): Not enough words in the file for the requested range [0:255].
+
+==============================================
+TEST 2: LOAD/STORE + LOAD-USE
+==============================================
+x1 = 00000008
+x2 = 00000001
+x3 = 00000001
+x4 = 00000009
+memory[2] = 00000001
+PASS: LOAD/STORE + LOAD-USE
+WARNING: tb/regression_tb.s:172: $readmemh(tb/regression/branch.hex): Not enough words in the file for the requested range [0:255].
+
+==============================================
+TEST 3: BEQ/BNE
+==============================================
+x1 = 00000001
+x2 = 00000001
+x3 = 00000007
+x5 = 00000002
+x6 = 00000009
+PASS: BEQ/BNE
+WARNING: tb/regression_tb.s:223: $readmemh(tb/regression/jal.hex): Not enough words in the file for the requested range [0:255].
+
+==============================================
+TEST 4: JAL
+==============================================
+x1 = 00000004
+x2 = 00000007
+x3 = 00000005
+PASS: JAL
+
+==============================================
+FINAL RTL REGRESSION RESULT
+==============================================
+ALL RTL REGRESSION TESTS PASSED
+RESULT: PASS
+==============================================
+tb/regression_tb.s:274: $finish called at 980000 (1ps)

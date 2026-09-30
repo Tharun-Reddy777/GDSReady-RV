@@ -1,0 +1,82 @@
+GDSReady-RV
+RTL-to-GDSII Implementation Summary
+===================================
+
+Design:
+riscv_core_asic
+
+Architecture:
+32-bit 5-stage pipelined RISC-V processor
+
+Pipeline:
+IF -> ID -> EX -> MEM -> WB
+
+ASIC Flow:
+RTL
+-> Yosys synthesis
+-> OpenROAD floorplan
+-> placement
+-> CTS
+-> routing
+-> post-route STA
+-> Magic DRC
+-> KLayout DRC
+-> Netgen LVS
+-> GDSII
+
+Technology:
+SkyWater SKY130 HD standard-cell flow
+
+Clock Target:
+10.0 ns
+100 MHz
+
+Primary Synthesis Run:
+RISCV_ASIC_SYNTH_02
+
+Primary Physical Implementation:
+RISCV_ASIC_PNR_01
+
+Physical Verification:
+OpenROAD routing DRC: PASS
+Magic DRC: PASS
+KLayout DRC: PASS
+Netgen LVS: PASS
+Antenna check: PASS
+
+KLayout DRC:
+Total violations = 0
+
+LVS:
+Circuits match uniquely
+
+Timing:
+Worst post-P&R setup WNS at nom_ss_100C_1v60:
+-6.861401 ns
+
+Aggregate reported setup WNS:
+-7.232224 ns
+
+Aggregate reported setup TNS:
+-1688.802674 ns
+
+Hold:
+Aggregate hold WNS = 0 ns
+Aggregate hold TNS = 0 ns
+
+Important Timing Note:
+The final physical implementation is not timing-clean at the
+10 ns target under the slow-corner setup analysis. Hold timing
+is clean. This result is retained as the measured implementation
+result rather than being hidden.
+
+Final GDSII:
+reports/pnr/RISCV_ASIC_PNR_01/riscv_core_asic_final.gds
+
+GDSII checksum:
+reports/pnr/RISCV_ASIC_PNR_01/GDS_SHA256.txt
+
+Detailed evidence:
+reports/synthesis/RISCV_ASIC_SYNTH_02/
+reports/pnr/RISCV_ASIC_PNR_01/
+reports/signoff/RISCV_ASIC_PNR_01/

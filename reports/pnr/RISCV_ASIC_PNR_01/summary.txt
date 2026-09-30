@@ -1,0 +1,35 @@
+GDSReady-RV — Final ASIC Physical Implementation Summary
+=========================================================
+
+Run:
+RISCV_ASIC_PNR_01
+
+Design:
+riscv_core_asic
+
+Flow:
+LibreLane / OpenROAD / Magic / KLayout / Netgen
+
+Purpose:
+Primary final physical implementation selected for project reporting.
+
+Clock:
+10.0 ns target period
+100 MHz target frequency
+
+Physical verification:
+DRC: PASS
+LVS: PASS
+Antenna: PASS
+
+Timing:
+See metrics.csv and detailed timing reports.
+
+Area / utilization:
+See metrics.csv.
+
+Final GDSII:
+riscv_core_asic_final.gds
+
+GDSII SHA-256:
+See GDS_SHA256.txt
